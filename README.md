@@ -30,3 +30,27 @@ This project aims to analyze the impact of Twitter sentiment on the fluctuation 
    ```sh
    git clone https://github.com/<YOUR-GITHUB-USERNAME>/<REPOSITORY-NAME>.git
    cd <REPOSITORY-NAME>
+
+2.Install the required packages:
+   ```sh
+   pip install -r requirements.txt
+
+### Configuration
+Set your Binance API key and secret in the script:
+   ```sh
+   api_key = 'your_api_key'
+   api_secret = 'your_api_secret'
+
+### Running the Application
+   ```sh
+   python combination_v6-1.py
+
+### Usage
+Input a Tweet: Enter the text of a tweet in the provided input field.
+Predict and Trade: The system will predict the impact on the cryptocurrency price and automatically place an order if the prediction meets the criteria.
+View Results: See the prediction details and order execution information in the GUI.
+
+### Contributions
+Contributions are welcome. Please submit a pull request or open an issue to discuss improvements or bug fixes.
+
+
