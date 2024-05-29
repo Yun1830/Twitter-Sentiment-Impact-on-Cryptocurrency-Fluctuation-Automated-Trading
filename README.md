@@ -20,7 +20,7 @@ This project aims to analyze the impact of Twitter sentiment on the fluctuation 
 
 ### Prerequisites
 
-- Python 3.8 or later
+- Python 3.9
 - Binance API keys for the Futures Testnet
 - Kivy for the GUI
 
