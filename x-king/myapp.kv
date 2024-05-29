@@ -1,0 +1,111 @@
+ScreenManager:
+    JudgmentScreen:
+
+<JudgmentScreen>:
+    name: 'judgment'
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        padding: [20, 50, 20, 50]
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint: 0.6, 1
+
+            TextInput:
+                id: tweet_input
+                hint_text: '請輸入你的推文'
+                size_hint: 1, None
+                height: '48dp'
+                multiline: True
+
+            Button:
+                text: '用DNN和LSTM模型判斷'
+                on_press: root.judge_tweet()
+                size_hint: 1, None
+                height: '48dp'
+
+            Button:
+                text: '清除全部'
+                on_press: root.clear_input()
+                size_hint: 1, None
+                height: '48dp'
+
+            BoxLayout:
+                id: result_box
+                orientation: 'vertical'
+                spacing: 10
+                size_hint: 1, None
+                height: '90dp'  # Adjusted to fit two results
+                Label:
+                    id: dnn_result_label
+                    size_hint: 1, None
+                    height: '30dp'
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.size
+                Label:
+                    id: lstm_result_label
+                    size_hint: 1, None
+                    height: '30dp'
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.size
+                Label:
+                    id: avg_result_label
+                    size_hint: 1, None
+                    height: '30dp'
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.size
+
+            BoxLayout:
+                id: order_result_box
+                orientation: 'vertical'
+                spacing: 10
+                size_hint: 1, None
+                height: '120dp'  # Adjusted to fit order result, info, and time taken
+                opacity: 0
+                Label:
+                    id: order_result_label
+                    size_hint: 1, None
+                    height: '30dp'
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.size
+                Label:
+                    id: order_info_label
+                    size_hint: 1, None
+                    height: '60dp'
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.size
+                    text: ''
+                Label:
+                    id: time_taken_label
+                    size_hint: 1, None
+                    height: '30dp'
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.size
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.4, 1
+            Label:
+                text: '歷史輸入紀錄'
+                size_hint: 1, None
+                height: '30dp'
+                halign: 'center'
+                valign: 'middle'
+                text_size: self.size
+            ScrollView:
+                BoxLayout:
+                    id: history_box
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: self.minimum_height
+            Button:
+                text: '清除歷史紀錄'
+                size_hint_y: None
+                height: '48dp'
+                on_press: root.clear_history()
